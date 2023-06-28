@@ -1,4 +1,4 @@
-# training_scheduls
+# GIF-search
 ### Приложение для поиска GIF.
 
 Приложение выполнено на React.
