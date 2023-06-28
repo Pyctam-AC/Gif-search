@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'clearBtn': "url('./images/ClearBtn.png')",
+        'searchBtn': "url('./images/SearchBtn.png')"
+      },
+      colors: {
+        'search-color': '#D9D9D9'
+      }
+    },
   },
   plugins: [],
 }
