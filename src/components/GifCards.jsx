@@ -17,7 +17,7 @@ const GifCards = (props) => {
     search(props.searchQuery, 9).then((res) => {
       serSearchedGifs(res.data);
     });
-  }, []);
+  }, [props.searchQuery]);
 
   useEffect(() => {
     random().then((res) => {
