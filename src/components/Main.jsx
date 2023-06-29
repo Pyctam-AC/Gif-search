@@ -3,19 +3,18 @@ import GifCards from './GifCards.jsx';
 import { useEffect, useState } from 'react';
 
 const Main = () => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const {inputValue, setUnputValue} = useState("");
-  const {searchQuery, setSearchQuery} = useState("")
+  const handleSearch = (serchData) => {
+    setSearchQuery(serchData);
+  };
+
+  console.log();
 
   return (
     <main className='w-100% mt-10 '>
-      <Search 
-        handleChange={(event) => setUnputValue(event.target.value)}
-        clickSearch={() => setSearchQuery(inputValue)}
-      />
-      <GifCards 
-        searchQuery={searchQuery}
-      />
+      <Search onSearch={handleSearch} />
+      <GifCards searchQuery={searchQuery} />
     </main>
   );
 };

@@ -14,9 +14,11 @@ const GifCards = (props) => {
   }, []);
 
   useEffect(() => {
-    search(props.searchQuery, 9).then((res) => {
-      serSearchedGifs(res.data);
-    });
+    if (props.searchQuery) {
+      search(props.searchQuery.searchValue, 9).then((res) => {
+        serSearchedGifs(res.data);
+      });
+    }
   }, [props.searchQuery]);
 
   useEffect(() => {
@@ -27,9 +29,9 @@ const GifCards = (props) => {
 
   return (
     <section className='mt-10 mb-10 grid grid-cols-3 gap-y-5 gap-x-5 justify-items-center justify-between'>
-      {trendingGifs.map((gif) => (
-        <Gif key={gif.id} gifImg={gif.id} />
-      ))}
+      {props.searchQuery
+        ? searchedGifs.map((gif) => <Gif key={gif.id} gifImg={gif.id} />)
+        : trendingGifs.map((gif) => <Gif key={gif.id} gifImg={gif.id} />)}
     </section>
   );
 };
