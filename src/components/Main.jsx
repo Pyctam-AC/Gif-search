@@ -6,9 +6,8 @@ import NavPage from './NavPage.jsx';
 import RamdomGif from './RamdomGif.jsx';
 import TrendingGifs from './TrendingGifs.jsx';
 
-
 const Main = () => {
-/*   const [searchQuery, setSearchQuery] = useState('');
+  /*   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (serchData) => {
     setSearchQuery(serchData);
@@ -18,21 +17,11 @@ const Main = () => {
 
   return (
     <main className='w-100% mt-10 '>
-      
       <Routes>
         <NavPage />
-        <Routes
-          path='/'
-          element={ <Search /> }
-        />
-        <Routes
-          path='/random'
-          element={ <RamdomGif /> }
-        />
-        <Routes
-          path='/trending'
-          element={ <TrendingGifs /> }
-        />
+        <Routes path='/' element={<Search />} />
+        <Routes path='/random' element={<RamdomGif />} />
+        <Routes path='/trending' element={<TrendingGifs />} />
       </Routes>
       {/* <Search onSearch={handleSearch} /> */}
       {/* <GifCards searchQuery={searchQuery} /> */}

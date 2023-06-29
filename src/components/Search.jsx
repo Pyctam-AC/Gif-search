@@ -25,8 +25,8 @@ const Search = () => {
             required: { value: true, message: 'Это поле нужно заполнить' },
           })}
           type='text'
-          className='w-3/5 h-10 bg-search-color outline-orange-500'
-          placeholder='Search GIF'
+          className='min-w-[500px] p-1 h-10 bg-search-color outline-orange-500'
+          placeholder='Найти GIF'
         />
         <button
           type='reset'

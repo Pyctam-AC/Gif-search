@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { trending, search, random } from '../utills/api';
 
 import Gif from './Gif';
 
-const GifCards = (props) => {
-/*   const [trendingGifs, setTrendinGifs] = useState([]);
+const GifCards = ({ gifCards }) => {
+  /*   const [trendingGifs, setTrendinGifs] = useState([]);
   const [searchedGifs, serSearchedGifs] = useState([]);
   const [ramdomGif, setRandomGif] = useState([]);
 
@@ -29,9 +30,16 @@ const GifCards = (props) => {
   }, []); */
 
   return (
-    <section className='mt-10 mb-10 grid grid-cols-3 gap-y-5 gap-x-5 justify-items-center justify-between'>
-      {props.gifCards.map((gif) => <Gif key={gif.id} gifImg={gif.id} /> )}
-      
+    <section
+      className={`${
+        typeof gifCards === 'string' ? 'grid-cols-1' : 'grid-cols-3'
+      } mt-10 mb-10 grid grid-cols-3 gap-y-5 gap-x-5 justify-items-center justify-between min-h-screen`}
+    >
+      {typeof gifCards === 'string' ? (
+        <Gif gifImg={gifCards} />
+      ) : (
+        gifCards.map((gif) => <Gif key={gif.id} gifImg={gif.id} />)
+      )}
     </section>
   );
 };
