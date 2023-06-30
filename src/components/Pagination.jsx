@@ -10,7 +10,7 @@ const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage, curr
     <ul className="flex flex-row gap-10 justify-center mb-10">
       <button
         className="text-white text-xl hover:text-orange-500"
-        onClick={prevPage}
+        onClick={currentPage < 1 ? paginate(1) : prevPage}
       >
         Назад
       </button>
@@ -28,7 +28,7 @@ const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage, curr
       }
       <button
         className="text-white text-xl hover:text-orange-500"
-        onClick={nextPage}
+        onClick={currentPage > pageNumbers.length? paginate(1) : nextPage}
       >
         Вперёд
       </button>
