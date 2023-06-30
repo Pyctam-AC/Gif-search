@@ -1,6 +1,8 @@
 const Footer = () => {
   return (
-    <footer className='pb-5 text-white text-center'>GIF Search @2023</footer>
+    <footer className='pb-5 text-white text-center mt-auto'>
+      GIF Search @2023
+    </footer>
   );
 };
 

@@ -71,6 +71,18 @@ const Search = () => {
         />
       )}
       <GifCards gifCards={currentGif} />
+      {!rendered ? (
+        <></>
+      ) : (
+        <Pagination
+          gifsPerPage={gifsPerPage}
+          totalGifs={searchedGifs.length}
+          paginate={paginate}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          currentPage={currentPage}
+        />
+      )}
     </>
   );
 };

@@ -39,6 +39,14 @@ const TrendingGifs = () => {
         currentPage={currentPage}
       />
       <GifCards gifCards={currentGif} />
+      <Pagination
+        gifsPerPage={gifsPerPage}
+        totalGifs={trendingGifs.length}
+        paginate={paginate}
+        nextPage={nextPage}
+        prevPage={prevPage}
+        currentPage={currentPage}
+      />
     </>
   );
 };
