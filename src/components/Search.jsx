@@ -13,6 +13,8 @@ const Search = () => {
 
   const [gifsPerPage] = useState(9);
 
+  const [rendered, setRendered] = useState(false);
+
   const lastGifIndex = currentPage * gifsPerPage;
   const firstGifIndex = lastGifIndex - gifsPerPage;
   const currentGif = searchedGifs.slice(firstGifIndex, lastGifIndex);
@@ -28,13 +30,14 @@ const Search = () => {
     getSearchedGifs(data.searchValue).then((res) => {
       paginate(1);
       setSearchedGifs(res.data);
+      setRendered(true);
     });
   };
 
   return (
     <>
       <form
-        className='flex flex-row gap-5 justify-center'
+        className='flex flex-row gap-5 justify-center mb-5'
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
@@ -42,7 +45,7 @@ const Search = () => {
             required: { value: true, message: 'Это поле нужно заполнить' },
           })}
           type='text'
-          className='min-w-[500px] p-1 h-10 bg-search-color outline-orange-500'
+          className='min-w-[215px] sm:min-w-[300px] md:min-w-[500px] p-1 h-10 bg-search-color outline-orange-500'
           placeholder='Найти GIF'
         />
         <button
@@ -55,15 +58,19 @@ const Search = () => {
           className='bg-searchBtn h-10 w-10 bg-contain hover:scale-105 active:scale-95'
         />
       </form>
+      {!rendered ? (
+        <></>
+      ) : (
+        <Pagination
+          gifsPerPage={gifsPerPage}
+          totalGifs={searchedGifs.length}
+          paginate={paginate}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          currentPage={currentPage}
+        />
+      )}
       <GifCards gifCards={currentGif} />
-      <Pagination
-        gifsPerPage={gifsPerPage}
-        totalGifs={searchedGifs.length}
-        paginate={paginate}
-        nextPage={nextPage}
-        prevPage={prevPage}
-        currentPage={currentPage}
-      />
     </>
   );
 };

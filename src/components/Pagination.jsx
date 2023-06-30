@@ -13,12 +13,12 @@ const Pagination = ({
   }
 
   return (
-    <ul className='flex flex-row gap-10 justify-center mb-10'>
+    <ul className='flex flex-row  gap-8 md:gap-10 justify-center mb-10'>
       <button
         className='text-white text-xl hover:text-orange-500'
         onClick={currentPage < 1 ? paginate(1) : prevPage}
       >
-        Назад
+        {'<'}
       </button>
       {pageNumbers.map((number) => (
         <li key={number}>
@@ -36,7 +36,7 @@ const Pagination = ({
         className='text-white text-xl hover:text-orange-500'
         onClick={currentPage > pageNumbers.length ? paginate(1) : nextPage}
       >
-        Вперёд
+        {'>'}
       </button>
     </ul>
   );

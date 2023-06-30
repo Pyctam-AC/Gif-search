@@ -9,13 +9,11 @@ import Search from './Search.jsx';
 
 const App = () => {
   return (
-    <div className='flex flex-col items-center bg-neutral-800'>
+    <div className=' min-h-screen flex flex-col items-center bg-neutral-800'>
       <Header />
       <main className='w-100% mt-10 '>
         <NavPage />
         <Routes>
-          {/* <Main /> */}
-
           <Route path='/' element={<Search />} />
           <Route path='/random' element={<RamdomGif />} />
           <Route path='/trending' element={<TrendingGifs />} />

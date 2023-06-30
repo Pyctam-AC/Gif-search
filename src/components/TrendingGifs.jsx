@@ -30,7 +30,6 @@ const TrendingGifs = () => {
 
   return (
     <>
-      <GifCards gifCards={currentGif} />
       <Pagination
         gifsPerPage={gifsPerPage}
         totalGifs={trendingGifs.length}
@@ -39,6 +38,7 @@ const TrendingGifs = () => {
         prevPage={prevPage}
         currentPage={currentPage}
       />
+      <GifCards gifCards={currentGif} />
     </>
   );
 };

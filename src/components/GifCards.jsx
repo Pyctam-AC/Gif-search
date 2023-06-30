@@ -10,8 +10,10 @@ const GifCards = ({ gifCards }) => {
     <>
       <section
         className={`${
-          randomGif ? 'grid-cols-1' : 'grid-cols-3'
-        } mt-10 mb-10 grid gap-y-5 gap-x-5 justify-items-center justify-between min-h-screen`}
+          randomGif
+            ? 'grid-cols-1'
+            : ' grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+        } mt-10 mb-10 grid gap-y-5 gap-x-5 justify-items-center justify-between min-h-max`}
       >
         {randomGif ? (
           <Gif gifImg={gifCards} />
