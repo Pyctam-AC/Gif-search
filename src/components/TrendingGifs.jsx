@@ -23,7 +23,6 @@ const TrendingGifs = () => {
 
   useEffect(() => {
     trending(9).then((res) => {
-      console.log(currentPage)
       setTrendinGifs(res.data);
     });
   }, []);
