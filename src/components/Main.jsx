@@ -7,14 +7,6 @@ import RamdomGif from './RamdomGif.jsx';
 import TrendingGifs from './TrendingGifs.jsx';
 
 const Main = () => {
-  /*   const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (serchData) => {
-    setSearchQuery(serchData);
-  };
-
-  console.log(); */
-
   return (
     <main className='w-100% mt-10 '>
       <Routes>
@@ -23,8 +15,6 @@ const Main = () => {
         <Routes path='/random' element={<RamdomGif />} />
         <Routes path='/trending' element={<TrendingGifs />} />
       </Routes>
-      {/* <Search onSearch={handleSearch} /> */}
-      {/* <GifCards searchQuery={searchQuery} /> */}
     </main>
   );
 };

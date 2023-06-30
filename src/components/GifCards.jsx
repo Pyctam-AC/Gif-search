@@ -6,8 +6,6 @@ const GifCards = ({ gifCards }) => {
   let randomGif;
   typeof gifCards === 'string' ? (randomGif = true) : (randomGif = false);
 
-
-
   return (
     <>
       <section

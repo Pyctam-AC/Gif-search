@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { search } from '../utills/api';
+import { getSearchedGifs } from '../utills/api';
 import GifCards from './GifCards';
 import Pagination from './Pagination';
 
@@ -17,13 +17,15 @@ const Search = () => {
   const firstGifIndex = lastGifIndex - gifsPerPage;
   const currentGif = searchedGifs.slice(firstGifIndex, lastGifIndex);
 
-  const paginate = (pageNumber) => {setcurrentPage(pageNumber)};
+  const paginate = (pageNumber) => {
+    setcurrentPage(pageNumber);
+  };
 
-  const nextPage = () => setcurrentPage (prev => prev + 1);
-  const prevPage = () => setcurrentPage (prev => prev - 1);
+  const nextPage = () => setcurrentPage((prev) => prev + 1);
+  const prevPage = () => setcurrentPage((prev) => prev - 1);
 
   const onSubmit = (data) => {
-    search(data.searchValue).then((res) => {
+    getSearchedGifs(data.searchValue).then((res) => {
       paginate(1);
       setSearchedGifs(res.data);
     });
