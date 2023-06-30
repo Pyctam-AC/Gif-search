@@ -23,6 +23,7 @@ const TrendingGifs = () => {
 
   useEffect(() => {
     trending(9).then((res) => {
+      console.log(currentPage)
       setTrendinGifs(res.data);
     });
   }, []);
@@ -36,6 +37,7 @@ const TrendingGifs = () => {
         paginate={paginate}
         nextPage={nextPage}
         prevPage={prevPage}
+        currentPage={currentPage}
       />
     </>
   );

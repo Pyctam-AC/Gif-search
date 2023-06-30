@@ -59,6 +59,7 @@ const Search = () => {
         paginate={paginate}
         nextPage={nextPage}
         prevPage={prevPage}
+        currentPage={currentPage}
       />
     </>
   );

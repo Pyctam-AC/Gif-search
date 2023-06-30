@@ -1,4 +1,4 @@
-const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage }) => {
+const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage, currentPage }) => {
 
   const pageNumbers = [];
 
@@ -18,7 +18,7 @@ const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage }) =>
         pageNumbers.map((number =>
           <li key={number}>
             <a
-              className="text-white text-xl hover:text-orange-500" href="#"
+              className={`text-xl ${currentPage===number? "text-orange-500" : "text-white"} hover:text-orange-500`} href="#"
               onClick={() => paginate(number)}
             >
                 {number}
