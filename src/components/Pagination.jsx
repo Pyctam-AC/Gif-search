@@ -17,12 +17,12 @@ const Pagination = ({ gifsPerPage, totalGifs, paginate, nextPage, prevPage, curr
       {
         pageNumbers.map((number =>
           <li key={number}>
-            <a
-              className={`text-xl ${currentPage===number? "text-orange-500" : "text-white"} hover:text-orange-500`} href="#"
+            <button
+              className={`text-xl ${currentPage===number? "text-orange-500" : "text-white"} hover:text-orange-500`}
               onClick={() => paginate(number)}
             >
                 {number}
-            </a>
+            </button>
           </li>
         ))
       }
