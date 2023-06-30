@@ -24,6 +24,7 @@ const Search = () => {
 
   const onSubmit = (data) => {
     search(data.searchValue).then((res) => {
+      paginate(1);
       setSearchedGifs(res.data);
     });
   };
