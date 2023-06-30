@@ -1,8 +1,8 @@
 const baseUrl = 'https://api.giphy.com/v1/gifs';
 const apiKey = 'api_key=aTyYrrrFv40Op4m3JdotI2eAcA7xDFKv';
 
-export const trending = (limit) => {
-  return fetch(`${baseUrl}/trending?${apiKey}&limit=${limit}`).then((res) =>
+export const trending = () => {
+  return fetch(`${baseUrl}/trending?${apiKey}`).then((res) =>
     res.json()
   );
 };

@@ -2,14 +2,28 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { search } from '../utills/api';
 import GifCards from './GifCards';
+import Pagination from './Pagination';
 
 const Search = () => {
   const { register, reset, handleSubmit } = useForm({ mode: 'onBlur' });
 
   const [searchedGifs, setSearchedGifs] = useState([]);
 
+  const [currentPage, setcurrentPage] = useState(1);
+
+  const [gifsPerPage] = useState(9);
+
+  const lastGifIndex = currentPage * gifsPerPage;
+  const firstGifIndex = lastGifIndex - gifsPerPage;
+  const currentGif = searchedGifs.slice(firstGifIndex, lastGifIndex);
+
+  const paginate = (pageNumber) => {setcurrentPage(pageNumber)};
+
+  const nextPage = () => setcurrentPage (prev => prev + 1);
+  const prevPage = () => setcurrentPage (prev => prev - 1);
+
   const onSubmit = (data) => {
-    search(data.searchValue, 9).then((res) => {
+    search(data.searchValue).then((res) => {
       setSearchedGifs(res.data);
     });
   };
@@ -38,7 +52,14 @@ const Search = () => {
           className='bg-searchBtn h-10 w-10 bg-contain hover:scale-105 active:scale-95'
         />
       </form>
-      <GifCards gifCards={searchedGifs} />
+      <GifCards gifCards={currentGif} />
+      <Pagination
+        gifsPerPage={gifsPerPage}
+        totalGifs={searchedGifs.length}
+        paginate={paginate}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
     </>
   );
 };
