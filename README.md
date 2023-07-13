@@ -23,4 +23,4 @@
 
 **Vercel**
 
-- [Открыть приложение](https://pyctam-ac.github.io/Gif-search/search)
+- [Открыть приложение](https://pyctam-ac.github.io/Gif-search/index.html)
