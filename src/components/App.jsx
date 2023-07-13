@@ -15,7 +15,7 @@ const App = () => {
       <main className='w-100% mt-10 '>
         <NavPage />
         <Routes>
-          <Route path='/' element={<Search />} />
+          <Route path='/search' element={<Search />} />
           <Route path='/random' element={<RamdomGif />} />
           <Route path='/trending' element={<TrendingGifs />} />
         </Routes>
