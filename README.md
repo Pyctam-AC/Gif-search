@@ -23,4 +23,4 @@
 
 **Vercel**
 
-- [Ссылка на проект на Vercel](gif-search-two.vercel.app)
+- [Ссылка на проект на Vercel](https://pyctam-ac.github.io/Gif-search/index.html)
