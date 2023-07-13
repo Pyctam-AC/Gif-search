@@ -10,12 +10,6 @@ import Search from './Search.jsx';
 
 const App = () => {
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/search');
-  });
-
   return (
     <div className=' min-h-screen flex flex-col items-center bg-neutral-800'>
       <Header />
